@@ -1,0 +1,56 @@
+# ==================================
+# Tokenizer Configuration
+# ==================================
+
+
+tokenizer:
+
+  # Algorithm
+  model_type: unigram
+
+  # Vocabulary size
+  vocab_size: 30000
+
+
+  # Character coverage
+  character_coverage: 0.9995
+
+
+  # Special tokens
+
+  unk_id: 0
+
+  bos_id: 1
+
+  eos_id: 2
+
+  pad_id: 3
+
+
+
+# ==================================
+# Training Data
+# ==================================
+
+data:
+
+  input_file: "data/indic_corpus.txt"
+
+  model_prefix: "tokenizer/indic"
+
+
+# ==================================
+# Evaluation
+# ==================================
+
+evaluation:
+
+  test_words:
+
+    - "ಕರ್ನಾಟಕ"
+
+    - "ಕರ್ನಾಟಕದಲ್ಲಿ"
+
+    - "ಕರ್ನಾಟಕದಿಂದ"
+
+    - "ಕನ್ನಡಭಾಷೆ"
