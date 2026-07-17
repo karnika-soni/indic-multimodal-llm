@@ -1,7 +1,90 @@
-vocab_size
-embedding_dim
-num_layers
-num_heads
-context_length
-batch_size
-learning_rate
+# ==================================
+# Indic LLM Configuration
+# ==================================
+
+model:
+
+  # Vocabulary size from tokenizer
+  vocab_size: 30000
+
+  # Token embedding dimension
+  embedding_dim: 512
+
+  # Transformer depth
+  num_layers: 12
+
+  # Number of attention heads
+  num_heads: 8
+
+  # Maximum context length
+  context_length: 512
+
+
+# ==================================
+# Training Configuration
+# ==================================
+
+training:
+
+  # Batch size per GPU
+  batch_size: 8
+
+  # Number of epochs
+  epochs: 10
+
+  # Optimizer learning rate
+  learning_rate: 0.0003
+
+  # Weight decay for AdamW
+  weight_decay: 0.01
+
+  # Gradient clipping
+  max_grad_norm: 1.0
+
+
+# ==================================
+# Optimization
+# ==================================
+
+optimization:
+
+  # Mixed precision training
+  use_fp16: true
+
+  # Gradient accumulation
+  gradient_accumulation_steps: 4
+
+
+# ==================================
+# Data
+# ==================================
+
+data:
+
+  train_path: "data/train.txt"
+
+  validation_path: "data/validation.txt"
+
+  tokenizer_path: "tokenizer/indic.model"
+
+
+# ==================================
+# Checkpointing
+# ==================================
+
+checkpoint:
+
+  save_dir: "checkpoints/"
+
+  save_every_epochs: 1
+
+
+# ==================================
+# Logging
+# ==================================
+
+logging:
+
+  use_wandb: true
+
+  project_name: "indic-multimodal-llm"
