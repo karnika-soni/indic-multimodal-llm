@@ -1,0 +1,91 @@
+# ==========================
+# Core Deep Learning
+# ==========================
+
+torch>=2.2.0
+torchvision
+torchaudio
+
+
+# ==========================
+# HuggingFace Ecosystem
+# ==========================
+
+transformers>=4.40.0
+datasets>=2.18.0
+tokenizers
+accelerate
+huggingface-hub
+
+
+# ==========================
+# Tokenization
+# ==========================
+
+sentencepiece
+
+
+# ==========================
+# Parameter Efficient Tuning
+# ==========================
+
+peft
+bitsandbytes
+
+
+# ==========================
+# Evaluation
+# ==========================
+
+sacrebleu
+evaluate
+
+
+# ==========================
+# NLP Processing
+# ==========================
+
+spacy
+stanza
+
+
+# ==========================
+# Computer Vision
+# ==========================
+
+opencv-python
+Pillow
+
+
+# ==========================
+# Detectron2 Support
+# ==========================
+
+fvcore
+iopath
+pyyaml
+
+
+# ==========================
+# Configuration
+# ==========================
+
+omegaconf
+
+
+# ==========================
+# Experiment Tracking
+# ==========================
+
+wandb
+
+
+# ==========================
+# Utilities
+# ==========================
+
+numpy
+pandas
+tqdm
+matplotlib
+scikit-learn
