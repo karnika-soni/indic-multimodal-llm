@@ -1,15 +1,46 @@
+# Python
 __pycache__/
+*.py[cod]
+*.so
 
-*.pt
+# Virtual environments
+venv/
+.venv/
+env/
 
-*.pth
+# Jupyter
+.ipynb_checkpoints/
 
+# Model checkpoints
 checkpoints/
+*.pt
+*.pth
+*.ckpt
 
+# Logs
 logs/
+*.log
 
+# Weights & Biases
 wandb/
 
+# Hugging Face cache
+.cache/
+.huggingface/
+
+# Environment variables
 .env
 
-.ipynb_checkpoints/
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
