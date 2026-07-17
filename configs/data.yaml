@@ -1,0 +1,16 @@
+data:
+
+  dataset_name: "pavan-naik/kannada_corpus_1m"
+
+  language: "kn"
+
+  max_length: 128
+
+
+tokenizer:
+
+  type: sentencepiece
+
+  vocab_size: 30000
+
+  model_path: "tokenizer/kannada.model"
