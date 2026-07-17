@@ -12,8 +12,7 @@ from models.transformer import (
 )
 
 
-
-class TinyGPT(nn.Module):
+class IndicTransformerLM(nn.Module):
 
     def __init__(
         self,
