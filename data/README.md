@@ -4,24 +4,31 @@
 ## Indic Language Model
 
 
-Pipeline:
+                  DOWNLOAD
 
-data/
+AI4Bharat IndicCorp              Flickr30k
+        |                            |
+        v                            v
 
-├── indic/
+data/indic/raw              data/multimodal/images
+        |                            |
+        |                            |
+        v                            v
 
-│ ├── raw/
+prepare_dataset.py          vision_features.py
 
-│ └── processed/
+        |                            |
 
-├── multimodal/
+        v                            v
 
-│ ├── images/
+data/indic/processed        data/multimodal/features
 
-│ ├── metadata.json
+        |                            |
 
-│ └── features/
+        v                            v
 
+SentencePiece              multimodal mBART
+Transformer                training
 ## Multimodal Translation
 
 
