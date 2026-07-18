@@ -6,44 +6,21 @@
 
 Pipeline:
 
-Raw Indic corpus
-
-↓
-
-Cleaning and preprocessing
-
-↓
-
-SentencePiece/BPE/WordPiece evaluation
-
-↓
-
-Selected tokenizer
-
-↓
-
-Autoregressive dataset
-
-
-Structure:
-
 data/
 
 ├── indic/
 
-│   ├── raw/
+│ ├── raw/
 
-│   └── processed/
-
+│ └── processed/
 
 ├── multimodal/
 
-│   ├── images/
+│ ├── images/
 
-│   ├── metadata.json
+│ ├── metadata.json
 
-│   └── features/
-
+│ └── features/
 
 ## Multimodal Translation
 
