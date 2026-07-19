@@ -13,9 +13,7 @@ The project explores:
 ---
 # Goal
 
-- Develop a multimodal Transformer-based translation system for low-resource Indic languages by combining text representations with visual feature grounding.
-- Improve translation quality using morphology-aware tokenization, NER-based entity masking, and image-text fusion.
-- Evaluate parameter-efficient adaptation methods such as LoRA against full fine-tuning for efficient model optimization.
+- Build a vision-grounded multimodal Transformer for low-resource Indic translation by combining morphology-aware text representations with image features to improve language translation quality.
 
 ---
 # Project Overview
