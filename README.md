@@ -1,4 +1,4 @@
-# Indic Multimodal Language Model
+## Indic Multimodal Neural Machine Translation Model
 
 A research-oriented implementation of an Indic Large Language Model (LLM) and Multimodal Neural Machine Translation system.
 
@@ -11,7 +11,6 @@ The project explores:
 - Parameter-efficient fine-tuning using LoRA vs full fine-tuning.
 
 ---
-
 # Project Overview
 
 Many Indic languages are:
@@ -53,80 +52,54 @@ which preserves linguistic structure and improves downstream performance.
 # System Architecture
 
 
-## 1. Indic Language Model
-
 ```
-                 INDIC TEXT CORPUS
+                   Text Input
                        |
                        |
-              Text Cleaning
+              NER Entity Masking
                        |
                        |
-              SentencePiece Tokenizer
+             SentencePiece Tokenizer
                        |
                        |
-             Token IDs + Embeddings
-                       |
-                       |
-                 NER Masking
+              Text Token Embeddings
                        |
                        |
                        |
-                       |
-
-
-                 IMAGE DATASET
-                 (Flickr30K)
-                       |
-                       |
-                 Detectron2
-                       |
-                       |
-          Region-Level Visual Features
-                       |
-                       |
-             Feature Projection
-                       |
-                       |
-                       |
-                       |
-              +----------------+
-              |                |
-              | Fusion Strategy |
-              |                |
-              +----------------+
-                    |
-        -----------------------------
-        |                           |
-     Early Fusion              Late Fusion
-        |                           |
-        |                           |
- Visual + Text Embeddings    Separate Encoding
-        |                           |
-        |                           |
-        -----------------------------
-                    |
-                    |
-              mBART Encoder
-                    |
-                    |
-        Contextual Hidden States
-                    |
-                    |
-              mBART Decoder
-                    |
-                    |
-        Causal Self-Attention
-        + Cross-Attention
-                    |
-                    |
-          Linear + Softmax
-                    |
-                    |
-          Target Token IDs
-                    |
-                    |
-             Kannada Output
+                       |                 Image Input
+                       |                     |
+                       |                 Detectron2
+                       |                     |
+                       |            Visual Region Features
+                       |                     |
+                       |             Feature Projection
+                       |                     |
+                       +----------+----------+
+                                  |
+                                  |
+                         Multimodal Fusion
+                    (Early Fusion / Late Fusion)
+                                  |
+                                  |
+                         mBART Encoder
+                                  |
+                                  |
+                 Multimodal Contextual Representations
+                                  |
+                                  |
+                         mBART Decoder
+                                  |
+                                  |
+              Causal Self-Attention + Cross-Attention
+                                  |
+                                  |
+                         Linear + Softmax
+                                  |
+                                  |
+                    Kannada Token Prediction
+                                  |
+                                  |
+                         Kannada Translation
 ```
 
 
@@ -173,13 +146,14 @@ The model can select the correct meaning.
 # Features
 
 
-## Indic LLM Training
+## Model Components
 
-- Transformer decoder architecture
-- Kannada / Indic corpus support
-- SentencePiece tokenization
-- Autoregressive training
-- GPU accelerated training
+- mBART encoder-decoder Transformer backbone
+- SentencePiece tokenizer
+- NER-based entity masking
+- Detectron2 visual feature extraction
+- Multimodal fusion layers
+- LoRA/full fine-tuning support
 
 
 ## Tokenization Analysis
