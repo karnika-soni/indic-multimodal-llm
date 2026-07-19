@@ -95,19 +95,32 @@ The language model contains:
               Detectron2
                    |
                    |
-          Visual Region Features
+        Visual Region Features
                    |
                    |
-           Feature Projection
+          Feature Projection
                    |
                    |
-Text ---------> mBART Encoder
+Text --------> Text Embeddings
                    |
                    |
-              Decoder
+          Multimodal Fusion
+        (Early / Late Fusion)
                    |
                    |
-            Translation Output
+            mBART Encoder
+                   |
+                   |
+      Contextual Hidden States
+                   |
+                   |
+            mBART Decoder
+                   |
+                   |
+       Autoregressive Generation
+                   |
+                   |
+          Kannada Translation
 
 ```
 
