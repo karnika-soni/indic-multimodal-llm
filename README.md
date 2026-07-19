@@ -10,7 +10,6 @@ The project explores:
 - Multimodal machine translation using image features
 - Parameter-efficient fine-tuning using LoRA vs full fine-tuning.
 
-
 ---
 
 # Project Overview
@@ -57,19 +56,77 @@ which preserves linguistic structure and improves downstream performance.
 ## 1. Indic Language Model
 
 ```
-Indic Corpus
-      |
-      |
-SentencePiece Tokenizer
-      |
-      |
-Token IDs
-      |
-      |
-Transformer Decoder
-      |
-      |
-Next Token Prediction
+                 INDIC TEXT CORPUS
+                       |
+                       |
+              Text Cleaning
+                       |
+                       |
+              SentencePiece Tokenizer
+                       |
+                       |
+             Token IDs + Embeddings
+                       |
+                       |
+                 NER Masking
+                       |
+                       |
+                       |
+                       |
+
+
+                 IMAGE DATASET
+                 (Flickr30K)
+                       |
+                       |
+                 Detectron2
+                       |
+                       |
+          Region-Level Visual Features
+                       |
+                       |
+             Feature Projection
+                       |
+                       |
+                       |
+                       |
+              +----------------+
+              |                |
+              | Fusion Strategy |
+              |                |
+              +----------------+
+                    |
+        -----------------------------
+        |                           |
+     Early Fusion              Late Fusion
+        |                           |
+        |                           |
+ Visual + Text Embeddings    Separate Encoding
+        |                           |
+        |                           |
+        -----------------------------
+                    |
+                    |
+              mBART Encoder
+                    |
+                    |
+        Contextual Hidden States
+                    |
+                    |
+              mBART Decoder
+                    |
+                    |
+        Causal Self-Attention
+        + Cross-Attention
+                    |
+                    |
+          Linear + Softmax
+                    |
+                    |
+          Target Token IDs
+                    |
+                    |
+             Kannada Output
 ```
 
 
@@ -81,48 +138,6 @@ The language model contains:
 - feed-forward layers
 - causal masking
 - autoregressive generation
-
-
----
-
-# 2. Multimodal Translation Architecture
-
-
-```
-                 Image
-                   |
-                   |
-              Detectron2
-                   |
-                   |
-        Visual Region Features
-                   |
-                   |
-          Feature Projection
-                   |
-                   |
-Text --------> Text Embeddings
-                   |
-                   |
-          Multimodal Fusion
-        (Early / Late Fusion)
-                   |
-                   |
-            mBART Encoder
-                   |
-                   |
-      Contextual Hidden States
-                   |
-                   |
-            mBART Decoder
-                   |
-                   |
-       Autoregressive Generation
-                   |
-                   |
-          Kannada Translation
-
-```
 
 
 Visual features provide additional context for ambiguous sentences.
