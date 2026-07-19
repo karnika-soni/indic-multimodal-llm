@@ -94,10 +94,11 @@ which preserves linguistic structure and improves downstream performance.
                  Multimodal Contextual Representations
                                   |
                                   |
-                         mBART Decoder
+                            mBART Decoder
                                   |
-                                  |
-              Causal Self-Attention + Cross-Attention
+                        Masked Self-Attention
+                                  +
+                    Encoder-Decoder Cross-Attention
                                   |
                                   |
                          Linear + Softmax
@@ -110,7 +111,7 @@ which preserves linguistic structure and improves downstream performance.
 ```
 
 
-The Transformer architecture contains:
+The mBART Transformer architecture contains:
 
 - token embeddings
 - positional embeddings
@@ -278,25 +279,6 @@ Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-
-# Multimodal Translation Training
-
-
-Extract image features:
-
-
-```bash
-python data/image_features.py
-```
-
-
-Fine-tune mBART:
-
-
-```bash
-python train_mbart.py
-```
-
 
 ---
 
