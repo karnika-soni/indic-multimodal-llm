@@ -13,7 +13,7 @@ The project explores:
 ---
 # Goal
 
-- Build a vision-grounded multimodal Transformer for low-resource Indic translation by combining morphology-aware text representations with image features to improve language translation quality.
+Build a vision-grounded multimodal Transformer for low-resource Indic translation by combining morphology-aware text representations with image features to improve language translation quality.
 
 ---
 # Project Overview
