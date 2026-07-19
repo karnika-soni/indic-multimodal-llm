@@ -8,7 +8,7 @@ The project explores:
 - Morphology-aware subword tokenization
 - Distributed large-scale pretraining workflows
 - Multimodal machine translation using image features
-- Parameter-efficient fine-tuning using LoRA / QLoRA
+- Parameter-efficient fine-tuning using LoRA vs full fine-tuning.
 
 
 ---
@@ -77,7 +77,7 @@ The language model contains:
 
 - token embeddings
 - positional embeddings
-- multi-head self attention
+- multi-head self-attention
 - feed-forward layers
 - causal masking
 - autoregressive generation
