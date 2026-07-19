@@ -11,8 +11,9 @@ The project explores:
 - Parameter-efficient fine-tuning using LoRA vs full fine-tuning.
 
 ---
-# Goals
+# Goal
 
+Improve low-resource Indic translation by integrating text understanding and visual grounding through a multimodal Transformer architecture.
 
 ---
 # Project Overview
@@ -219,19 +220,21 @@ while freezing the base model.
 
 
 ```
-Dataset
-   |
-Preprocessing
-   |
-Tokenizer
-   |
-DataLoader
-   |
-Distributed Training
-   |
+Image-Text Dataset
+ |
+NER + Text Preprocessing
+ |
+SentencePiece Tokenization
+ |
+Detectron2 Feature Extraction
+ |
+Multimodal DataLoader
+ |
+DDP Fine-tuning
+ |
 Checkpoint Saving
-   |
-Evaluation
+ |
+BLEU Evaluation
 ```
 
 
@@ -273,47 +276,6 @@ Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-
-
----
-
-# Training Multimodal Translation Model
-
-Prepare dataset:
-python data/preprocessing.py
-
-Train tokenizer:
-python tokenizer/train_tokenizer.py
-
-Extract image features:
-python data/image_features.py
-
-Fine-tune mBART:
-python train_mbart.py
-
-
-Prepare dataset:
-
-```bash
-python data/preprocessing.py
-```
-
-
-Train tokenizer:
-
-```bash
-python tokenizer/train_tokenizer.py
-```
-
-
-Train model:
-
-```bash
-python train_llm.py
-```
-
-
----
 
 # Multimodal Translation Training
 
