@@ -207,18 +207,6 @@ Small trainable adapter matrices
 
 while freezing the base model.
 
-
-### QLoRA
-
-Uses:
-
-```
-4-bit quantized weights
-+
-LoRA adapters
-```
-
-
 ---
 
 # Training Pipeline
