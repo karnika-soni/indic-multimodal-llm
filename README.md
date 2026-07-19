@@ -1,14 +1,18 @@
 ## Indic Multimodal Neural Machine Translation Model
 
-A research-oriented implementation of an Indic Large Language Model (LLM) and Multimodal Neural Machine Translation system.
+A research-oriented implementation of an Indic multimodal neural machine translation system combining morphology-aware text processing with visual feature grounding.
 
 The project explores:
 
-- Transformer-based Indic language modeling
-- Morphology-aware subword tokenization
-- Distributed large-scale pretraining workflows
-- Multimodal machine translation using image features
+- Transformer-based multimodal neural machine translation
+- Morphology-aware subword tokenization for Indic languages
+- Visual feature extraction and image-text fusion
+- Distributed Transformer fine-tuning workflows
 - Parameter-efficient fine-tuning using LoRA vs full fine-tuning.
+
+---
+# Goals
+
 
 ---
 # Project Overview
@@ -103,7 +107,7 @@ which preserves linguistic structure and improves downstream performance.
 ```
 
 
-The language model contains:
+The Transformer architecture contains:
 
 - token embeddings
 - positional embeddings
@@ -174,7 +178,7 @@ Metrics:
 
 ---
 
-## Multimodal Neural Machine Translation
+## Training Strategy
 
 Implemented:
 
@@ -273,7 +277,19 @@ pip install -r requirements.txt
 
 ---
 
-# Training Indic Language Model
+# Training Multimodal Translation Model
+
+Prepare dataset:
+python data/preprocessing.py
+
+Train tokenizer:
+python tokenizer/train_tokenizer.py
+
+Extract image features:
+python data/image_features.py
+
+Fine-tune mBART:
+python train_mbart.py
 
 
 Prepare dataset:
