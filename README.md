@@ -236,38 +236,6 @@ Supports:
 - checkpoint recovery
 - experiment tracking
 
-
----
-
-# Repository Structure
-
-
-```
-indic-multimodal-llm/
-
-├── configs/
-│
-├── models/
-│   ├── attention.py
-│   ├── transformer.py
-│   ├── tiny_gpt.py
-│   └── mbart_multimodal.py
-│
-├── tokenizer/
-│
-├── data/
-│
-├── training/
-│
-├── evaluation/
-│
-├── train_llm.py
-├── train_mbart.py
-└── generate.py
-
-```
-
-
 ---
 
 # Installation
@@ -396,7 +364,7 @@ The improvement demonstrates the benefit of visual grounding for translation.
 | Language Models | HuggingFace Transformers |
 | Tokenization | SentencePiece |
 | Vision | Detectron2 |
-| Fine-tuning | PEFT LoRA / QLoRA |
+| Fine-tuning | PEFT LoRA |
 | Evaluation | SacreBLEU |
 | Distributed Training | DDP |
 
@@ -409,7 +377,7 @@ The improvement demonstrates the benefit of visual grounding for translation.
 - Larger Indic corpora
 - Flash Attention integration
 - FSDP training
-- Retrieval augmented generation
+- Retrieval-augmented generation
 - Instruction tuning
 - Preference optimization
 
